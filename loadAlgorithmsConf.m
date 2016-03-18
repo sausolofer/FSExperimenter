@@ -1,5 +1,5 @@
 function algorithms = loadAlgorithmsConf(algorithmsList,type)
-algorithms={};
+algorithms=[];
 for i=1:length(algorithmsList)
     if strcmp(type,'Feature selection')
         fsAlgorithm=[];
@@ -14,10 +14,10 @@ for i=1:length(algorithmsList)
                 options.k =5;
                 options.WeightMode = 'HeatKernel';
                 %Cosine
-                %                 options.Metric = 'Cosine';
-                %                 options.NeighborMode = 'KNN';
-                %                 options.k = 5;
-                %                 options.WeightMode = 'Cosine';
+                %options.Metric = 'Cosine';
+                %options.NeighborMode = 'KNN';
+                %options.k = 5;
+                %options.WeightMode = 'Cosine';
             case 'spectrum'
                 fsAlgorithm.name ='spectrum';
                 fsAlgorithm.shotName ='SPEC';

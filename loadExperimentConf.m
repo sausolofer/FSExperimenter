@@ -18,17 +18,17 @@ experimentConf.dataSetList = getDataSetListFromPath(experimentConf.dataSetsToPro
 % FS algorithms to apply list
 %fsAlgorithmsList={'laplacian score','spectrum','distance entropy','svd entropy'};
 fsAlgorithmsList={'laplacian score','spectrum'};
-experimentConf.fsAlgorithms = loadAlgoritmsConf(fsAlgorithmsList,'Feature selection');
+experimentConf.fsAlgorithms = loadAlgorithmsConf(fsAlgorithmsList,'Feature selection');
 
 %% Classifiers
 % Classifiers to apply list
 classifiersList={'Naive Bayes','SVM','KNN','C4.5'};
-experimentConf.classifiers = loadAlgoritmsConf(classifiersList,'Classifiers');
+experimentConf.classifiers = loadAlgorithmsConf(classifiersList,'Classifiers');
 
 %% Clustering algorithms
 % Clustering algorithms to apply list
 clusteringAlgorithmsList={'Kmeans','EM','Cobweb'};
-experimentConf.clusteringAlgorithms = loadAlgoritmsConf(clusteringAlgorithmsList,'Clustering algorithms');
+experimentConf.clusteringAlgorithms = loadAlgorithmsConf(clusteringAlgorithmsList,'Clustering algorithms');
 
 %% Other Options
 experimentConf.numOfFeaturesACCrankingEvaluation =  2;
