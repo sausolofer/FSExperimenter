@@ -1,4 +1,4 @@
-function algorithms = loadAlgoritmsConf(algorithmsList,type)
+function algorithms = loadAlgorithmsConf(algorithmsList,type)
 algorithms={};
 for i=1:length(algorithmsList)
     if strcmp(type,'Feature selection')
@@ -45,6 +45,7 @@ for i=1:length(algorithmsList)
         
     else %Clustering
         
+    
         
     end
 end
