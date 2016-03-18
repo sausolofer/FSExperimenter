@@ -6,17 +6,6 @@ if strcmp('Directory already exists.',message)
     disp(message);
 end
 
-% for i=1:length(algorithms) %Algorithms 
-%     for j=1:length(dataSets)%Datasets
-%         datasetResultDir=[experimentResultDir,getDataSetName_path(dataSets{j}),'\'];
-%         [status,message]= mkdir(datasetResultDir);
-%         if strcmp('Directory already exists.',message)
-%             disp(message);
-%         end
-%         runExperiment(algorithms(i),dataSets(j),datasetResultDir,numOfFeaturesACCrankingEvaluation,true);           
-%     end
-% end
-
 for i=1:length(dataSets) %Datasets
     for j=1:length(algorithms)%Algorithms 
         datasetResultDir=[experimentResultDir,getDataSetName_path(dataSets{i}),'\'];

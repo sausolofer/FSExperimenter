@@ -16,8 +16,9 @@ experimentConf.dataSetList = getDataSetListFromPath(experimentConf.dataSetsToPro
 
 %% Feature Selection Algorithms
 % FS algorithms to apply list
-fsAlgorithmsList={'laplacian score','spectrum','distance entropy','svd entropy'};
-experimentConf.fsAlgorithms = loadAlgoritmsConf(fsAlgorithmsList,'Feature selection algorithms');
+%fsAlgorithmsList={'laplacian score','spectrum','distance entropy','svd entropy'};
+fsAlgorithmsList={'laplacian score','spectrum'};
+experimentConf.fsAlgorithms = loadAlgoritmsConf(fsAlgorithmsList,'Feature selection');
 
 %% Classifiers
 % Classifiers to apply list

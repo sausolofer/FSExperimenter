@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Main script Feature Selection Experimenter 
+% Feature Selection Experimenter (Main script)
 % Institution INAOE
 % Author: Saul Solorio Fdez.
 % Version 1.0
@@ -14,7 +14,7 @@ load_myFSpackage;
 experimentConf = loadExperimentConf;
 
 %% Run experiment 
-[ok]=runExperimentOnDatasets(selectorsCell,datasetsCell,experimentName,numOfFeaturesACCrankingEvaluation,resultsPath)
+%[ok]=runExperimentOnDatasets(selectorsCell,datasetsCell,experimentName,numOfFeaturesACCrankingEvaluation,resultsPath)
 [ok]=runExperimentOnDatasets(experimentConf);
 %%
 disp('Experiment finished');
