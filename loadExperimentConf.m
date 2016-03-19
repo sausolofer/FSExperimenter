@@ -3,12 +3,13 @@ function experimentConf = loadExperimentConf()
 experimentConf = [];
 
 %% Experiment name
-experimentConf.experimentName = 'Exp1';
+experimentConf.experimentName = 'Exp2';
 
 %% Paths
 curPath = pwd;
 % Results directory path
-experimentConf.resultsPath = [curPath,filesep,'ResultsDir',filesep];
+%experimentConf.resultsPath = [curPath,filesep,'ResultsDir',filesep];
+experimentConf.resultsPath = 'C:\Users\SSF\Documents\TESTDIR\';
 % Processing datasets path
 experimentConf.dataSetsToProcessPath=[curPath,filesep,'dataSets', filesep];
 experimentConf.dataSetList = getDataSetListFromPath(experimentConf.dataSetsToProcessPath);
@@ -32,4 +33,5 @@ experimentConf.clusteringAlgorithms = loadAlgorithmsConf(clusteringAlgorithmsLis
 
 %% Other Options
 experimentConf.numOfFeaturesACCrankingEvaluation =  2;
+experimentConf.standardizeDatasets = true;
 

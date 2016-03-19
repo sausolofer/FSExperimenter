@@ -15,6 +15,6 @@ experimentConf = loadExperimentConf;
 
 %% Run experiment 
 %[ok]=runExperimentOnDatasets(selectorsCell,datasetsCell,experimentName,numOfFeaturesACCrankingEvaluation,resultsPath)
-[ok] = runExperimentOnDatasets(experimentConf);
+[ok] = runGlobalExperiment(experimentConf);
 %%
 disp('Experiment finished');

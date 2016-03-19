@@ -13,9 +13,9 @@ disp(filename);
 disp('%%%%%%%%%%%%%%%%%%%%%%%%');
 
 RES = []; X = []; Partition = [];
-load(filePath{1}{1}, 'RES'); 
-load(filePath{2}{1}, 'X', 'Y'); 
-load(filePath{3}{1}, 'Partition');
+load(filePath{1}, 'RES'); 
+load(filePath{2}, 'X', 'Y'); 
+load(filePath{3}, 'Partition');
 
 %If it's feature-oriented
 if(RES{1}.fImp)

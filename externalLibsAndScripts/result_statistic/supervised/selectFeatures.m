@@ -1,28 +1,25 @@
-function [outputFile] = selectFeatures(dataset, algorithm,resultsPath)
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   Input
-%      algorithm:
-%       The code for the algorithm you wish to run
-%       Possible Codes:
-%			blogreg
-%			cfs
-%			chi2
-%			fcbf
-%			fisher
-%			gini
-%			infogain
-%			kruskalwallis
-%			mrmr
-%			relieff
-%			sbmlr
-%			ttest
-%			
+function [dataSetName] = selectFeatures(dataSet, algorithmCode, resultsPath)
 
-%
-%       dataset:
-%        The code for the dataset you wish to run.
-%        This will be the name of the dataset without
-%        its extension.
+%% This are the two files for the dataset we wish to evaluate
+dataSet = char(dataSet)
+load(dataSet);
+fileDir = cell(2,1);
+fileDir{1} = dataSet;
+[dataSetName,path] = getDataSetName_path(dataSet);
+dataSetName = strtok(dataSetName,'.');
+fileDir{2} = strcat([path,dataSetName],'_part.mat');
 
-%% Select the features based on the data set
-    [outputFile] = selectFeaturesFromDataset(dataset, algorithm, resultsPath);
+%try
+%% Calculate the feature selection on the dataset
+RES = expFun_wi_sam_feat(fileDir, dataSetName, algorithmCode);
+
+%% Save the results to a file (make sure it is algorithmCode-specific)
+file = strcat(resultsPath,dataSetName ,'_',algorithmCode,'_fs','_result', '.mat');
+save(file, 'RES');
+% catch ME
+%     fprintf('An error was caught for %s data\n',fileName{i});
+%     disp(ME.message);
+%     ME.stack(1)
+% end
+
+end
