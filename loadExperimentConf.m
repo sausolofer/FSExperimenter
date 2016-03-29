@@ -11,7 +11,7 @@ curPath = pwd;
 %experimentConf.resultsPath = [curPath,filesep,'ResultsDir',filesep];
 experimentConf.resultsPath = 'C:\Users\SSF\Documents\TESTDIR\';
 % Processing datasets path
-experimentConf.dataSetsToProcessPath=[curPath,filesep,'dataSets', filesep];
+experimentConf.dataSetsToProcessPath=[curPath,filesep,'dataSets', filesep,'MixedData',filesep];
 experimentConf.dataSetList = getDataSetListFromPath(experimentConf.dataSetsToProcessPath);
 %dataset = java.lang.String([pwd,filesep,'Data',filesep,'iris.arff']);
 

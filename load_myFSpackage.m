@@ -1,15 +1,16 @@
 curPath = pwd;
 
-%% load weka jar, and common interfacing methods.
-path(path, [curPath, filesep, 'externalLibsAndScripts', filesep, 'lib']);
-path(path, [curPath, filesep, 'externalLibsAndScripts', filesep, 'lib', filesep, 'weka']);
-loadWeka(['externalLibsAndScripts', filesep, 'lib' filesep 'weka']);
+%% load extenal jar libraries, and common interfacing methods.
+path(path, [curPath, filesep, 'libs', filesep, 'otherLibs']);
+path(path, [curPath, filesep, 'libs', filesep, 'otherLibs', filesep, 'weka']);
+loadWeka(['libs', filesep, 'otherLibs' filesep 'weka']);
+path(path, [curPath, filesep, 'libs', filesep, 'otherLibs', filesep, 'KFST']);
+javaaddpath([curPath,filesep,'libs',filesep,'otherLibs',filesep,'KFST',filesep,'KFST-1.0.jar']);
+
 
 %% other java paths
-path(path, [curPath, filesep, 'externalLibsAndScripts', filesep, 'myLibs']);
-javaaddpath([curPath,filesep,'ExternalLibsAndScripts',filesep,'myLibs',filesep,'PPLCbeta.jar']);
-javaaddpath([curPath,filesep,'ExternalLibsAndScripts',filesep,'myLibs',filesep,'evaluador2.jar']);
-javaaddpath([curPath,filesep,'ExternalLibsAndScripts',filesep,'myLibs',filesep,'PPLCWekaBridge.jar']);
+path(path, [curPath, filesep, 'libs', filesep, 'myLibs']);
+javaaddpath([curPath,filesep,'libs',filesep,'myLibs',filesep,'evaluador2.jar']);
 
 %% feature selection algorithms
 %Supervised
@@ -39,18 +40,19 @@ path(path,[curPath filesep 'classifiers' filesep 'bayes']);
 path(path,[curPath filesep 'clusters' filesep 'kmeans']);
 
 %% data preprocessors
-path(path,[curPath, filesep, 'preprocessor']);
+path(path,[curPath, filesep, 'scripts' filesep 'preprocessor']);
 
+%% process
 
 %% evaluator
-path(path,[curPath, filesep, 'externalLibsAndScripts', filesep, 'evaluator', filesep, 'fsevaluator']);
+path(path,[curPath, filesep, 'scripts', filesep, 'evaluator', filesep, 'fsevaluator']);
 
 %% My scripts
-path(path,[curPath filesep 'myScripts']);
+path(path,[curPath, filesep, 'scripts', filesep,'myScripts']);
 %path(path,[curPath filesep 'myScripts' filesep 'process']);
 
 %% ability to run experiments.
-path(path, [curPath, filesep, 'externalLibsAndScripts', filesep ...
+path(path, [curPath, filesep, 'scripts', filesep ...
     'result_statistic', filesep, 'supervised', filesep]);
 
 clear curPath;
