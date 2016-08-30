@@ -1,0 +1,6 @@
+function sendMeMail(data)
+     
+    sendmail( 'sausolofer@gmail.com','New subject', ...
+        ['Line1 of message' 10 'Line2 of message' 10 ...
+         'Line3 of message' 10 'Line4 of message']);
+end
