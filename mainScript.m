@@ -7,14 +7,15 @@
 
 %% clear workspace 
 clc;
-clear all;
+clearvars;
+%clear all;
 
-%% Load experiment's packages and configurations 
+%% Load experimenter's packages and configurations 
 load_myFSpackage;
 experimentConf = loadExperimentConf;
 
 %% Run experiment 
-%[ok]=runExperimentOnDatasets(selectorsCell,datasetsCell,experimentName,numOfFeaturesACCrankingEvaluation,resultsPath)
 [ok] = runGlobalExperiment(experimentConf);
 %%
+disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
 disp('Experiment finished');
